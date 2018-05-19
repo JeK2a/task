@@ -60,4 +60,8 @@ class Model_Portfolio implements Model
 		);
 	}
 
+    public function set_data()
+    {
+        // TODO: Implement set_data() method.
+    }
 }

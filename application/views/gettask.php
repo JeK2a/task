@@ -1,14 +1,11 @@
 <?php
 
-//use db;
+require_once('../models/db.php');
 
-require_once('db.php');
-
-if (isset( $_GET['id'])) {
-    // Здесь $id номер изображения
+if (isset($_GET['id'])) {
     $id = (int)$_GET['id'];
     if ($id > 0) {
-        $query = "SELECT `content` FROM `images` WHERE `id`=".$id;
+        $query = "SELECT `image` FROM `task` WHERE `id`=".$id;
 
         $db = db\DB::getConnection();
         $que = $db->query($query);
@@ -19,7 +16,7 @@ if (isset( $_GET['id'])) {
 
         $image = $data[0];
         header("Content-type: image/*");
-        echo $image['content'];
+        echo $image['image'];
 //        }
     }
 }
