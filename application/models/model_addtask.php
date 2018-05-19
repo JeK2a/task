@@ -1,28 +1,10 @@
 <?php
 
-use db\DB;
+class Model_AddTask implements Model {
 
-require_once 'db.php';
-
-class Model_Image implements Model
-{
-
-    public function get_data($id = null)
+    public function get_data()
     {
-        if (empty($id)) {
-            $query = "SELECT `content` FROM `images`";
-        } else {
-            $query = "SELECT `content` FROM `images` WHERE `id`=" . $id;
-        }
-
-        $db = DB::getConnection();
-        $que = $db->query($query);
-        $data = $que->fetchAll();
-
-        $data = $data[0];
-
-//        header("Content-type: image/*");
-        return $data;
+        // TODO: Implement get_data() method.
     }
 
     public function set_data()
@@ -40,7 +22,7 @@ class Model_Image implements Model
                     // Формируем запрос на добавление файла в базу данных
                     $query = "INSERT INTO `images` VALUES(NULL, '".$image."')";
                     // После чего остается только выполнить данный запрос к базе данных
-//            mysql_query($query);
+//                  mysql_query($query);
 
                     $db = db\DB::getConnection();
                     $que = $db->query($query);
