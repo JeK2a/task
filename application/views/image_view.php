@@ -3,4 +3,4 @@
     <input type="submit" value="Загрузить" />
 </form>
 
-<img src="image.php?id=2" width="320" height="240" alt="" />
+<img src="/application/views/image.php?id=2" width="320" height="240" alt="" />

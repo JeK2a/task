@@ -9,8 +9,6 @@ if (isset( $_GET['id'])) {
     $id = (int)$_GET['id'];
     if ($id > 0) {
         $query = "SELECT `content` FROM `images` WHERE `id`=".$id;
-        // Выполняем запрос и получаем файл
-//        $res = mysql_query($query);
 
         $db = db\DB::getConnection();
         $que = $db->query($query);
@@ -20,15 +18,8 @@ if (isset( $_GET['id'])) {
 //            $image = mysql_fetch_array($res);
 
         $image = $data[0];
-
-//        echo '<pre>';
-//        var_dump($image);
-//        echo '</pre>';
-
-            // Отсылаем браузеру заголовок, сообщающий о том, что сейчас будет передаваться файл изображения
-            header("Content-type: image/*");
-            // И  передаем сам файл
-            echo $image['content'];
+        header("Content-type: image/*");
+        echo $image['content'];
 //        }
     }
 }
