@@ -14,13 +14,10 @@ class Model_Image implements Model
         } else {
             $query = "SELECT `content` FROM `images` WHERE `id`=" . $id;
         }
-
         $db = DB::getConnection();
         $que = $db->query($query);
         $data = $que->fetchAll();
-
         $data = $data[0];
-
 //        header("Content-type: image/*");
         return $data;
     }
@@ -41,7 +38,6 @@ class Model_Image implements Model
                     $query = "INSERT INTO `images` VALUES(NULL, '".$image."')";
                     // После чего остается только выполнить данный запрос к базе данных
 //            mysql_query($query);
-
                     $db = db\DB::getConnection();
                     $que = $db->query($query);
                 }

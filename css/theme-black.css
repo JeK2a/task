@@ -1,0 +1,8 @@
+body{
+    background: url(../images/background-black.png);
+    /*background: black;*/
+    color: white;
+}
+hr{
+    background: white;
+}

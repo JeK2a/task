@@ -15,6 +15,4 @@ interface Model
 	// метод выборки данных
 	public function get_data();
 
-    public function set_data();
-
 }

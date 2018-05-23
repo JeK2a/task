@@ -13,12 +13,12 @@ if(!empty($_FILES['image']['name'])) {
             // Экранируем специальные символы в содержимом файла
             $image = mysql_escape_string($image);
             // Формируем запрос на добавление файла в базу данных
-            $query="INSERT INTO `task` VALUES(NULL, 'user', 'e-mail', 'text', '".$image."')";
+//            $query="INSERT INTO `task` VALUES(NULL, 'user', 'e-mail', 'text', '".$image."')";
+            $query="INSERT INTO `task` VALUES(NULL, 'user', 'e-mail', 'text', '1', 'new')";
             // После чего остается только выполнить данный запрос к базе данных
 //            mysql_query($query);
             $db = \db\DB::getConnection();
             $que = $db->query($query);
-
         }
     }
 }
